@@ -1,4 +1,4 @@
-# My journey to mastering SQL
+# Data Analytics Progression
 
 Welcome to my data analytic repo. This repo will be my recorded journey on to mastering skills relevant to data analytics. I have prior experience with data cleaning, visualization, python, databases and SQL, however
 it was never too in depth. Throughout this learning process, I plan on taking multiple courses and using websites with any relevant resources where 
