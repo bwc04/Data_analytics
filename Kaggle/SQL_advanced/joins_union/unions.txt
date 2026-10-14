@@ -1,0 +1,16 @@
+10/13/26
+Kaggle Advanced SQL
+Course lesson #1: unions
+
+UNION concatenates tables vertically. Essentially stacks the 2 tables on top of each other. However there are
+some constraints.
+
+    - Data types of both columns must be the same. column names can differ
+    - UNION ALL includes duplicated values
+    - UNION  DISTINCT includes only distinct values, drops duplicated values
+
+A example query that shows all the distinct ages of all pets and owners:
+
+    SELECT age FROM owners
+    UNION DISTINCT
+    SELECT age FROM pets
