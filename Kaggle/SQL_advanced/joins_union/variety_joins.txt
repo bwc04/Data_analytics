@@ -1,0 +1,38 @@
+10/13/26
+Kaggle Advanced SQL
+Course lesson #1: Variety Joins
+
+INNER JOIN is used as the default JOIN. INNER JOIN pulls rows from both tables where the values match. INNER JOINS
+ignores any nulls
+
+Say we have 2 tables: owners, pets. Owner and pets describe the relationship between the pets and owners in the animal care center.
+
+owners: [{id: 1, name: Aubrey, age: 20, pet_id: 1},
+         {id: 2, name: Jeff, age: 18, pet_id: 2},
+         {id: 3, name: Jules, age: 21, pet_id: 3},
+         {id: 4, name: Bryan, age: 36, pet_id: NULL}]
+
+pets: [{id: 1, name: Barney, species: rabbit},
+       {id: 2, name: Thomas, species: cat},
+       {id: 3, name: chris, species: dog},
+       {id: 4, name: Garen, species: hamster}]
+
+* Bryan pet_id is NULL, which indicates that Bryan currently doesn't have a pet that is staying at the animal care center. That
+also means that Garen the hamster currently has no owner.
+
+If we INNER JOIN owners and pets here under matching pet_id (owners) and id (pets), Bryan and Garen would not be included in the 
+results because there is no match.
+
+If we wanted to include all pets or all owners despite no matching ids, we can use LEFT or RIGHT JOIN. 
+    
+    LEFT JOIN: retains all rows from the left table whether there is a match or not
+    RIGHT JOIN: retains all rows from the right table whether there is a match or not
+    FULL JOIN: returns all rows from both tables whether they match or not
+
+* non matching rows will have NULL entries for the missing values. 
+
+A example query that shows all owners and their pets if they have one.
+
+    SELECT o.name AS owner_name, p.name AS pet_name
+    FROM owner AS o LEFT JOIN pets AS p
+    ON o.pet_id = p.id;
